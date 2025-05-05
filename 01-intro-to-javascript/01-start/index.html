@@ -4,11 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src=".//js/javascript.js"></script>
-    <title>Document</title>
+    <title>A Time Based Greeting</title>
+    <style>
+        body{
+            background:rgb(33, 42, 77);
+            color:beige;
+        }
+    </style>
 </head>
 <body>
+    <p>A time based greeting:</p>
+    <p id="demo"></p>
     <script>
-        console.log("Hello, World!")
+        const hour = new Date().getHours();
+        let greeting;
+
+        if (hour < 18) {
+            greeting = "Good Day";
+        } else {
+            greeting = "Good Evening";
+        }
+
+        document.getElementById("demo").innerHTML = greeting;
     </script>
 </body>
 </html>
